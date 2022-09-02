@@ -1,11 +1,12 @@
 import itertools as it
+import re
 from timeit import timeit
 from typing import Dict, List, Optional, Set, Tuple, Union
-import re
+
 import numpy as np
 
-
 from present import Present
+
 # Cube攻击实现
 
 
