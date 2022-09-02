@@ -72,6 +72,7 @@ if __name__ == "__main__":
                    )
     # encryption_algo表示攻击的加密算法
     # test_times表示进行BLR线性测试时的阈值，当该值为N时，得到的随机一位密钥bit的置信度为1 - 2**(-N)
+    # 攻击时间随test_times增大成线性增长，建议选取恰当的值。
     # max_degree表示立方攻击选取的最高维度，该值越大，一次攻击获得的密钥bit越多。
     # 当攻击的加密算法较复杂时，需选取更大的值才能成功得到密钥bit。
     # 但是攻击运行时间随max_degree增大成指数增长，建议选取恰当的值。
@@ -106,34 +107,3 @@ if __name__ == "__main__":
 
 ```
 
-## 项目性能
-
-作为参考，在个人笔记本电脑上攻击三轮的PRESENT算法，参数和对应结果如下
-|test_table | | | | |
-| :----: | --- | --- | --- | --- |
-| **UseTime(seconds)** | **max_degree**| 1 | 2| 3|
-| **test_times** |
-| 20||0.217|27.519|1304.546|
-| 50||0.429|67.519|3248.361|
-|100||0.781|132.163|5793.583|
-
-<table border="1">
-<tr>
-<td>row 1, cell 1</td>
-<td>row 1, cell 1</td>
-<td>row 1, cell 1</td>
-<td>row 1, cell 2</td>
-</tr>
-<tr>
-<td>row 1, cell 1</td>
-<td>row 1, cell 1</td>
-<td>row 2, cell 1</td>
-<td>row 2, cell 2</td>
-</tr>
-<tr>
-<td>row 1, cell 1</td>
-<td>row 1, cell 1</td>
-<td>row 2, cell 1</td>
-<td>row 2, cell 2</td>
-</tr>
-</table>
