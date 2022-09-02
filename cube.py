@@ -5,7 +5,6 @@ from typing import Dict, List, Optional, Set, Tuple, Union
 
 import numpy as np
 
-from present import Present
 
 # Cube攻击实现
 
@@ -25,7 +24,7 @@ class Cube:
     # tool functions
     def _encryption_algo_checker(self, algo) -> None:
         try:
-            k_len,v_len = algo.get_len()
+            k_len, v_len = algo.get_len()
         except:
             raise AttributeError("传入的加密算法无所需的类方法get_len()")
         test_key = "0" * (k_len >> 2)
@@ -49,7 +48,6 @@ class Cube:
                 "输出格式错误，要求{}位十六进制数字符串".format(v_len >> 2),
                 ciphertext,
             )
-
 
     def _hex_num_to_bin_list(self, hex_num: str, bit_limit: int) -> List[str]:
         dec_num = int(hex_num, 16)

@@ -1,8 +1,8 @@
-
-from math import ceil
-from typing import List, Tuple, Set, Dict, Union, Optional
 import re
+from typing import Dict, List, Optional, Set, Tuple, Union
+
 import numpy as np
+
 # Present算法具体实现
 
 
