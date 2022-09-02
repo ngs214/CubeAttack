@@ -4,7 +4,7 @@
 
 ## 项目简介
 
-本项目实现了简单的Cube攻击，可传入加密算法来进行攻击。在攻击内置的PRESENT算法时，设置算法迭代轮次为3，cube维数不大于3，成功获取了32bit密钥，在个人笔记本电脑上耗时约4小时。
+本项目实现了简单的Cube攻击，可传入加密算法来进行攻击。在攻击内置的PRESENT算法时，设置算法迭代轮次为3，cube维数不大于3，成功获取了32bit密钥，在个人笔记本电脑上耗时约21min。
 
 ## 项目结构
 
@@ -41,13 +41,22 @@ from cube import Cube
 from present import Present
 
 # 导入加密算法
-# 要求加密算法输入密钥，明文支持含空格不分大小写的十六进制字符串
-# 输出密文格式为不含空格的不分大小写的十六进制字符串
+# 要求加密算法输入输出格式均为可含十六进制前缀和空格的不分大小写的十六进制字符串(字符串尾部不得有空格)
+# 形如"(0x)ABCD 0011 CCCCCC D"
+
+# 要求加密算法的密文和明文等长
+
 # 要求加密算法类实现以下类方法
 # @classmethod
 # def get_len(cls) -> Tuple[int, int]:
 #     return cls.key_len, cls.plaintext_len
 # 返回该加密算法对应的密钥长度和明文长度
+
+# 要求加密算法输出密文的接口函数为以下形式：
+# def cipher(plaintext:str) -> str:
+#    return ciphertext
+
+
 if __name__ == "__main__":
     start = time()
     encryption_algo = Present

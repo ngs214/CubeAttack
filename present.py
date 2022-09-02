@@ -13,7 +13,7 @@ class Present:
     def __init__(self, key: str, default_round=4) -> None:
         key = key.replace(" ", "").upper()
         key_form = re.compile(r"(0x)?[0-9A-F]{20}")
-        # 形如(0x)0123456789ABCDEFabcd
+        # 形如"(0x)0123456789ABCDEFabcd"
         if not re.fullmatch(key_form, key):
             raise ValueError("不是合法的密钥(20位十六进制数)", key)
         self._init_key = key

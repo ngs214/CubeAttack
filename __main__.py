@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     my_cube = Cube(encryption_algo=encryption_algo,
                    test_times=20,
-                   max_degree=2,
+                   max_degree=1,
                    )
     # encryption_algo表示攻击的加密算法
     # test_times表示进行BLR线性测试时的阈值，当该值为N时，得到的随机一位密钥bit的置信度为1 - 2**(-N)
