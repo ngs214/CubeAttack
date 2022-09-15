@@ -10,6 +10,7 @@ from present import Present
 # def get_len(cls) -> Tuple[int, int]:
 #     return cls.key_len, cls.plaintext_len
 # 返回该加密算法对应的密钥长度和明文长度
+
 if __name__ == "__main__":
     start = time()
     encryption_algo = Present
